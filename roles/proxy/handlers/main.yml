@@ -1,0 +1,3 @@
+---
+- name: restart daemon
+  service: name=privoxy state=restarted enabled=yes daemon_reload=yes

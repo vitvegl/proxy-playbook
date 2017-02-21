@@ -1,0 +1,12 @@
+[Unit]
+Description=Privacy enhancing HTTP Proxy
+
+[Service]
+Type={{ type }}
+PIDFile={{ __pidfile }}
+ExecStart=/usr/sbin/privoxy --pidfile {{ __pidfile }} --user {{ owner }} {{ configfile }}
+ExecStopPost=/bin/rm -f {{ __pidfile }}
+SuccessExitStatus={{ success_exit_status }}
+
+[Install]
+WantedBy={{ wanted_by }}

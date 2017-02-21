@@ -1,0 +1,37 @@
+release: xenial
+package: privoxy
+
+type: forking
+__pidfile: /var/run/privoxy.pid
+owner: privoxy
+group: root
+mode: 0400
+configfile: /etc/privoxy/config
+success_exit_status: 15
+wanted_by: multi-user.target
+
+user_agent: "{ +hide-user-agent{Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.4) Gecko/20100101 Firefox/45.4}}\n/"
+socket_timeout: 300
+tolerate_pipelining: 1
+keep_alive_timeout: 5
+split_large_forms: 0
+allow_cgi_request_crunching: 0
+accept_intercepted_requests: 0
+forwarded_connect_retries: 0
+enable_proxy_authentication_forwarding: 0
+buffer_limit: 4096
+enforce_blocks: 0
+enable_edit_actions: 0
+enable_remote_http_toggle: 0
+enable_remote_toggle: 0
+toggle: 1
+listen_address: 127.0.0.1:8118
+logfile: logfile
+default_filter: default.filter
+user_filter: user.filter
+match_all_action_file: match-all.action
+default_action_file: default.action
+user_action_file: user.action
+logdir: /var/log/privoxy
+confdir: /etc/privoxy
+user_manual: /usr/share/doc/privoxy/user-manual

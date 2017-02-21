@@ -1,0 +1,7 @@
+---
+  - name: copying custom config file
+    template: src=privoxy.config.j2 dest=/etc/privoxy/config owner={{ owner }} group={{ group }} mode={{ mode }}
+    notify: restart daemon
+  - name: copying custom user.action file
+    template: src=user.action.j2 dest=/etc/privoxy/user.action owner={{ owner }} group={{ group }} mode={{ mode }}
+    notify: restart daemon

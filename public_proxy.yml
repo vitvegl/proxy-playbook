@@ -1,0 +1,7 @@
+---
+  - name: privoxy as public proxy
+    hosts: all
+    gather_facts: False
+    roles:
+      - public
+    become: yes

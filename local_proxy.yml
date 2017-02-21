@@ -1,0 +1,7 @@
+---
+  - name: privoxy as local proxy
+    hosts: all
+    gather_facts: False
+    roles:
+      - local
+    become: yes

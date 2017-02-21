@@ -1,0 +1,4 @@
+---
+  - name: install package
+    apt: name={{ package }} default_release={{ release }}
+          update_cache=yes install_recommends=no state=latest
